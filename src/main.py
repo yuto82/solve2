@@ -1,7 +1,8 @@
 from modules.weather.weather import get_weather
-from modules.settings.settings import BASE_URL, API_KEY
+from modules.location.location import get_location
+from modules.settings.settings import WEATHER_URL, LOCATION_URL,API_KEY
 
-city = "Warsaw"
+city = get_location(LOCATION_URL)
 
-data_weather = get_weather(BASE_URL, API_KEY, city)
+data_weather = get_weather(WEATHER_URL, API_KEY, city)
 print(data_weather)
